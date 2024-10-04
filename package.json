@@ -1,8 +1,8 @@
 {
-  "name": "react-component-generate",
-  "displayName": "React Component Generator",
-  "description": "Generate React component boilerplate code",
-  "version": "0.0.1",
+  "name": "react-component-generate-boilerplate",
+  "displayName": "React Component Generator Boilerplate",
+  "description": "A boilerplate for creating a React component generator extension for Visual Studio Code.",
+  "version": "0.0.2",
   "publisher": "CodeWithJavier",
   "author": {
     "name": "CodeWithJavier",

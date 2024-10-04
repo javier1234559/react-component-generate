@@ -258,18 +258,18 @@ async function createComponentFiles(workspaceFolder, history) {
 
 function generateComponentContent(componentName, hasProps, props) {
 	const propsContent = hasProps ? `interface ${componentName}Props {\n${props.map(p => `  ${p.name}: ${p.type};`).join('\n')}\n}\n\n` : '';
-	const importStatement = hasProps ? "import React, { memo } from 'react';\n\n" : "import React from 'react';\n\n";
-	const exportStatement = hasProps ? `export default memo(${componentName});` : `export default ${componentName};`;
+	const importStatement = hasProps ? "import { memo } from 'react';\n\n" : " \n\n";
 
-	return `${importStatement}${propsContent}function ${componentName}(${hasProps ? `props: ${componentName}Props` : ''}) {
-  return <div>${componentName}</div>;
+	const componentFunction = `function ${componentName}(${hasProps ? `{ ${props.map(p => p.name).join(', ')} }: ${componentName}Props` : ''}) {
+return <div>${componentName}</div>;
 }
 
-${componentName}.displayName = '${componentName}';
-${exportStatement}
-`;
-}
+${componentName}.displayName = '${componentName}';`;
 
+	const exportStatement = hasProps ? `\nexport default memo(${componentName});` : `\nexport default ${componentName};`;
+
+	return `${importStatement}${propsContent}${componentFunction}${exportStatement}`;
+}
 
 
 function deactivate() { }

@@ -36,7 +36,9 @@ React Component Generator is a Visual Studio Code extension that simplifies and 
 
 That's it! Your new React component will be generated in the specified folder.
 
-![alt text](assets/demo/demo.gif)
+<!-- ![alt text](assets/demo/demo.gif) -->
+
+<img src="assets/demo/demo.gif" width="100%" height="250"/>
 
 ## Example
 
