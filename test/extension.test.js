@@ -1,15 +1,19 @@
 const assert = require('assert');
-
-// You can import and use all API from the 'vscode' module
-// as well as import your extension to test it
 const vscode = require('vscode');
-// const myExtension = require('../extension');
+const path = require('path');
+const fs = require('fs');
+const sinon = require('sinon');
+const mocha = require('mocha');
 
-suite('Extension Test Suite', () => {
+const suite = mocha.suite;
+const test = mocha.test;
+
+suite('React Component Generator Extension Test Suite', () => {
 	vscode.window.showInformationMessage('Start all tests.');
 
-	test('Sample test', () => {
-		assert.strictEqual(-1, [1, 2, 3].indexOf(5));
-		assert.strictEqual(-1, [1, 2, 3].indexOf(0));
+	test('Extension should be present', () => {
+		assert.ok(vscode.extensions.getExtension('CodeWithJavier.react-component-generate'));
 	});
+
+
 });
