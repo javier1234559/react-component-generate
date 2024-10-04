@@ -1,65 +1,86 @@
-# react-component-generate README
+# React Component Generator
 
-This is the README for your extension "react-component-generate". After writing up a brief description, we recommend including the following sections.
+## Introduction
+
+React Component Generator is a Visual Studio Code extension that simplifies and accelerates the process of creating React components. With just a few clicks, you can generate boilerplate code for new React components, complete with optional TypeScript support, props interface, and various file structure options.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- Quick generation of React component boilerplate code
+- Support for functional components with optional props
+- TypeScript support out of the box
+- Multiple file structure options:
+  1. Single file component
+  2. Component with separate index file
+  3. Component with separate index and style files (SCSS or CSS)
+- Customizable component folder location
 
-For example if there is an image subfolder under your extension project workspace:
+## Installation
 
-\!\[feature X\]\(images/feature-x.png\)
+1. Open Visual Studio Code
+2. Go to the Extensions view (Ctrl+Shift+X or Cmd+Shift+X on macOS)
+3. Search for "React Component Generator"
+4. Click on the "Install" button
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## Usage
 
-## Requirements
+1. Open a React project in VS Code
+2. Open the Command Palette (Ctrl+Shift+P or Cmd+Shift+P on macOS)
+3. Type "Create React Component" and select the command
+4. Follow the prompts to:
+   - Select or create a target folder
+   - Name your component
+   - Choose whether to include props
+   - Define prop names and types (if applicable)
+   - Select the desired file structure
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+That's it! Your new React component will be generated in the specified folder.
 
-## Extension Settings
+![alt text](assets/demo/demo.gif)
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+## Example
 
-For example:
+Here's an example of a generated component with props:
 
-This extension contributes the following settings:
+```typescript
+import React, { memo } from 'react';
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+interface MyComponentProps {
+  name: string;
+  age: number;
+}
 
-## Known Issues
+function MyComponent({ name, age }: MyComponentProps) {
+  return (
+    <div>
+      <h1>{name}</h1>
+      <p>Age: {age}</p>
+    </div>
+  );
+}
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+MyComponent.displayName = 'MyComponent';
+export default memo(MyComponent);
+```
 
-## Release Notes
+## Configuration
 
-Users appreciate release notes as you update your extension.
+Currently, the extension uses default settings. Future versions may include customizable options through VS Code's settings.
 
-### 1.0.0
+## Contributing
 
-Initial release of ...
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-### 1.0.1
+## License
 
-Fixed issue #.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-### 1.1.0
+## Support
 
-Added features X, Y, and Z.
+If you encounter any problems or have any suggestions, please [open an issue](https://github.com/javier1234559/react-component-generate/issues) on our GitHub repository.
 
----
+## About the Author
 
-## Working with Markdown
+This extension was created by CodeWithJavier. You can find more of my work on [GitHub](https://github.com/javier1234559).
 
-You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+Enjoy using React Component Generator!
